@@ -15,19 +15,20 @@
   ],
   "routes": [
     {
-      "src": "/api(.*)",
-      "dest": "backend/src/server.js"
+      "src": "/api/(.*)",
+      "dest": "/backend/src/server.js"
     },
     {
       "src": "/graphql",
-      "dest": "backend/src/server.js"
+      "dest": "/backend/src/server.js"
     },
     {
-      "handle": "filesystem"
+      "src": "/(.*\\.(js|css|ico|json|txt))",
+      "dest": "/dist/frontend/browser/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "dist/frontend/browser/index.html"
+      "dest": "/dist/frontend/browser/index.html"
     }
   ]
 }
